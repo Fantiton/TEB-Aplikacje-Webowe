@@ -14,7 +14,7 @@
                 $lastId = $row['id'];    
             } 
         }
-        $sql2 = 'INSERT INTO notatki (id, title, content) VALUES ("", "' . $_POST['title'] . '", "' . $_POST['note'] . '")';
+        $sql2 = 'INSERT INTO notatki (id, title, content, category) VALUES ("", "' . $_POST['title'] . '", "' . $_POST['note'] . '", "' . $_POST['category'] . ')';
         $res2 = $con->query($sql2);
         header('location: read.php?id=' . $lastId + 1);
     }
@@ -32,6 +32,8 @@
         <form action="create.php" method="post">
             <label class="createLabel">Tytół: </label></br>
             <input type="text" id="titleInput" name="title" placeholder="Notatka" required></br>
+            <label class="createLabel">Kategoria: </label></br>
+            <input type="text" id="catInput" name="category" placeholder="Lista Zakupowa"><br>
             <label class="createLabel">Notatka: </label></br>
             <textarea id="noteInput" name="note" value="" placeholder="Moje Notatki"></textarea></br>
             <input class="createSubmit" type="submit" value="Stwórz ">
