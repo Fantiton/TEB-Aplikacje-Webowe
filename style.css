@@ -1,8 +1,8 @@
 body{
     margin: 0;
     font-family: helvetica;
-    background-color: black;
     color: orange;
+    background-color: black;
 }
 #centered{
     width: 100%;
@@ -11,30 +11,34 @@ body{
     align-items: center;
     justify-content: center;
     line-height: 5vh;
-    background-color: black;
     color: orange;
+    background-color: black;
 }
 #createButton{
     width: 20vh;
-    height: 20vh;
+    height: 23vh;
     font-size: 0;
     text-align: center;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
     display: flex;
     padding: 0;
     float: left;
     border-radius: 1.5vh;
     border: 1px solid black;
-    background-color: orange;
+    background-color: white;
 }
 #createButton:hover{
     box-shadow: 0.2px 0.2px 1vh 0.5vh black;
 }
 #createButtonIcon{
     width: 100%;
-    height: 100%;;
+    height: auto;;
     border-radius: 1.5vh;
+    text-align: center;
+    align-self: center;
+    display: flex;
+    justify-self: center;
 }
 .createLabel{
     font-size: 200%;
@@ -88,12 +92,13 @@ body{
 }
 .noteLink{
     width: 20vh;
-    height: 20vh;
+    height: 23vh;
     float: left;
     margin-left: 2%;
     border: 1px solid black;
     border-radius: 1.5vh;
     text-align: center;
+    background-color: lightgray;
 }
 .noteLink:hover{
     background-color: gray;
@@ -104,14 +109,22 @@ body{
     height: 70%;
     border-radius: 1.5vh;
 }
+#filter{
+    width: 19%;
+    float: left;
+    height: 100vh;
+    text-align: center;
+    padding: 1%;
+}
 #main{
-    width: 100%;
+    width: 75%;
     height: fit-content;
     min-height: 80vh;
     float: left;
     background-color: orange;
     margin: 0;
     padding: 2%;
+    border-top-left-radius: 2vh;
 }
 #search{
     width: 100%;
@@ -140,4 +153,49 @@ body{
 #searchsubmit:hover{
     background-color: rgb(255, 229, 182);
     cursor: pointer;
+}
+.category{
+    border-radius: 10vh;
+    background-color: rgb(96, 43, 255);
+    color: white;
+    margin-bottom: 0;
+    height: 2.8vh;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+.noteTitle{
+    height: 3.8vh;
+}
+.filterSubmit{
+    height: 3vh;
+    float: left;
+    width: 90%;
+    font-size: 2vh;
+    border-radius: 1.2vh;
+    margin-top: 2%;
+}
+.filterSubmit:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+.filterText{
+    height: 2.3vh;
+    float: left;
+    width: 60%;
+    font-size: 2vh;
+    border-top-left-radius: 1.2vh;
+    border-bottom-left-radius: 1.2vh;
+    margin-top: 2%;
+    text-align: center;
+}
+.filterTextSubmit{
+    width: 30%;
+    height: 3vh;
+    float: left;
+    margin-top: 2%;
+    border-top-right-radius: 1.2vh;
+    border-bottom-right-radius: 1.2vh;
 }

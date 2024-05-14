@@ -22,10 +22,15 @@
         while ($row = $res->fetch_assoc()) { 
             echo '
             <form action="edit.php?id=' . $_GET['id'] . '" method="post">
+                <label class="createLabel">Tytuł: </label></br>
                 <input type="text" id="titleInput" name="title" value="' . $row['title'] . '" required"></br>
+                <label class="createLabel">Kategoria: </label></br>
+                <input type="text" id="catInput" name="category" value="' . $row['category'] . '"></br>
+                <label class="createLabel">Notatka: </label></br>
                 <textarea id="noteInput" name="note">' . $row['content'] . '</textarea></br>
                 <input class="createSubmit" type="submit" value="Zapisz ">
                 <button class="createSubmit"><a href="index.php" class="fullLink">Wyjdź</a></button>
+                <button class="createSubmit"><a href="delete.php?id=' . $_GET['id'] . '" class="fullLink">Usuń</a></button>
             </form>
             ';
         }

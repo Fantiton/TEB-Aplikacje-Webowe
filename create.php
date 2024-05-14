@@ -13,10 +13,14 @@
                 }
                 $lastId = $row['id'];    
             } 
+            $sql2 = 'INSERT INTO notatki (id, title, content, category) VALUES ("", "' . $_POST['title'] . '", "' . $_POST['note'] . '", "' . $_POST['category'] . '")';
+            $res2 = $con->query($sql2);
+            if ($res2) {
+                header('location: read.php?id=' . $lastId + 1);
+            }else {
+                echo 'ŁUPS! Coś poszło nie tak 😭';
+            }
         }
-        $sql2 = 'INSERT INTO notatki (id, title, content, category) VALUES ("", "' . $_POST['title'] . '", "' . $_POST['note'] . '", "' . $_POST['category'] . ')';
-        $res2 = $con->query($sql2);
-        header('location: read.php?id=' . $lastId + 1);
     }
 ?>
 <!DOCTYPE html>
