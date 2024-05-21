@@ -22,8 +22,6 @@
                 echo 'ŁUPS! Coś poszło nie tak 😭';
             }
         }
-    }else{
-        echo 'coś poszło nie tak';
     }
 ?>
 <!DOCTYPE html>
