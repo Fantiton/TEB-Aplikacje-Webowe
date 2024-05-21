@@ -37,7 +37,7 @@
         if (isset($_POST['search'])) {
             $sql = "SELECT * FROM notatki WHERE title LIKE '%" . $_POST['search'] . "%' ORDER BY id desc";
             $res = $con->query($sql);
-            if($res->num_rows > 0) {
+            if($res) {
                 while($row = mysqli_fetch_assoc($res)) {
                     echo '
                         <div class="noteLink">

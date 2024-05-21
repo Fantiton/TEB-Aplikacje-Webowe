@@ -18,6 +18,8 @@ body{
     width: 20vh;
     height: 23vh;
     font-size: 0;
+    margin-left: 2%;
+    margin-top: 2%;
     text-align: center;
     justify-content: center;    
     align-items: center;
@@ -95,14 +97,15 @@ body{
     height: 23vh;
     float: left;
     margin-left: 2%;
-    border: 1px solid black;
+    margin-top: 2%;
+    border: 1px solid gray;
     border-radius: 1.5vh;
     text-align: center;
     background-color: lightgray;
 }
 .noteLink:hover{
     background-color: gray;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 .noteLinkIcon{
     width: 100%;
@@ -117,13 +120,12 @@ body{
     padding: 1%;
 }
 #main{
-    width: 75%;
+    width: 79%;
     height: fit-content;
-    min-height: 80vh;
+    min-height: 100vh;
     float: left;
     background-color: orange;
     margin: 0;
-    padding: 2%;
     border-top-left-radius: 2vh;
 }
 #search{

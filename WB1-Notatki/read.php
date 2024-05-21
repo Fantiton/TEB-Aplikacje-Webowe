@@ -18,7 +18,7 @@
 
     $sql = 'SELECT * FROM notatki WHERE id = ' . $_GET['id'];
     $res = $con->query($sql);
-    if ($res->num_rows > 0) {
+    if ($res) {
         while ($row = $res->fetch_assoc()) { 
             echo '
             <form action="edit.php?id=' . $_GET['id'] . '" method="post">

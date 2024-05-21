@@ -1,11 +1,11 @@
 <?php 
     $con = mysqli_connect("localhost","root","","filcel-notatki");
-    if(!isset($_POST['title'])){
-
-    }else{
+    if(isset($_POST['title'])){
+        echo 'tworzenie';
         $sql = 'SELECT * FROM notatki ORDER BY id asc';
         $res = $con->query($sql); 
-        if($res->num_rows > 0){ 
+        if($res){ 
+            $lastId = 0;
             while ($row=$res->fetch_assoc()) {
                 if ($row['title'] == $_POST['title']) {
                     $error = 'title';
@@ -16,11 +16,14 @@
             $sql2 = 'INSERT INTO notatki (id, title, content, category) VALUES ("", "' . $_POST['title'] . '", "' . $_POST['note'] . '", "' . $_POST['category'] . '")';
             $res2 = $con->query($sql2);
             if ($res2) {
-                header('location: read.php?id=' . $lastId + 1);
+                echo 'Sukces!';
+                header('location: read.php?id=' . ($lastId + 1));
             }else {
                 echo 'ŁUPS! Coś poszło nie tak 😭';
             }
         }
+    }else{
+        echo 'coś poszło nie tak';
     }
 ?>
 <!DOCTYPE html>
@@ -34,7 +37,7 @@
 <body>
     <div id="centered">
         <form action="create.php" method="post">
-            <label class="createLabel">Tytół: </label></br>
+            <label class="createLabel">Tytuł: </label></br>
             <input type="text" id="titleInput" name="title" placeholder="Notatka" required></br>
             <label class="createLabel">Kategoria: </label></br>
             <input type="text" id="catInput" name="category" placeholder="Lista Zakupowa"><br>
